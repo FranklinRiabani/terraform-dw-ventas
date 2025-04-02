@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dw_db_ventas",
+						"referenceName": "df_dim_producto",
 						"type": "DataFlowReference"
 					},
 					"compute": {
