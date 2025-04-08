@@ -13,7 +13,24 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Proceso",
+						"value": "CargaDiaria"
+					},
+					{
+						"name": "Fuente",
+						"value": "SQLServer"
+					},
+					{
+						"name": "Destino",
+						"value": "dbo.dim_producto"
+					},
+					{
+						"name": "VersionDatos",
+						"value": "v1.2"
+					}
+				],
 				"typeProperties": {
 					"dataflow": {
 						"referenceName": "df_dim_producto",
