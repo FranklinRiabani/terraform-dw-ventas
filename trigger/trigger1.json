@@ -16,7 +16,7 @@
 			"recurrence": {
 				"frequency": "Minute",
 				"interval": 15,
-				"startTime": "2025-04-08T23:26:00",
+				"startTime": "2025-04-08T23:30:00",
 				"timeZone": "SA Western Standard Time"
 			}
 		}
