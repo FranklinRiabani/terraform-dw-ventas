@@ -58,6 +58,10 @@
 		"ls_sql_dw_ventas_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "franklin"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3060f79-50ab-459c-9f00-5cf6e5f8abf8/resourceGroups/gr-sisinfo-4536427/providers/Microsoft.Storage/storageAccounts/sasisinfo4536427"
 		}
 	},
 	"variables": {
@@ -1219,6 +1223,37 @@
 						"startTime": "2025-04-08T23:30:00",
 						"timeZone": "SA Western Standard Time"
 					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline_db_ventas')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger2')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pipeline_db_ventas",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/ventas/blobs/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger2_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated",
+						"Microsoft.Storage.BlobDeleted"
+					]
 				}
 			},
 			"dependsOn": [

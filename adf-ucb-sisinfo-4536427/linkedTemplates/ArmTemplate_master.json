@@ -59,6 +59,10 @@
 			"type": "string",
 			"defaultValue": "franklin"
 		},
+		"trigger2_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3060f79-50ab-459c-9f00-5cf6e5f8abf8/resourceGroups/gr-sisinfo-4536427/providers/Microsoft.Storage/storageAccounts/sasisinfo4536427"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
@@ -128,6 +132,29 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adf-ucb-sisinfo-4536427_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"trigger2_properties_typeProperties_scope": {
+						"value": "[parameters('trigger2_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-ucb-sisinfo-4536427_ArmTemplate_0')]"
+			]
 		}
 	]
 }

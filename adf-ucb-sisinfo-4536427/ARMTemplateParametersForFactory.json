@@ -43,6 +43,9 @@
 		},
 		"ls_sql_dw_ventas_properties_typeProperties_userName": {
 			"value": "franklin"
+		},
+		"trigger2_properties_typeProperties_scope": {
+			"value": "/subscriptions/f3060f79-50ab-459c-9f00-5cf6e5f8abf8/resourceGroups/gr-sisinfo-4536427/providers/Microsoft.Storage/storageAccounts/sasisinfo4536427"
 		}
 	}
 }
