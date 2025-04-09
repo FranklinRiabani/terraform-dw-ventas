@@ -63,6 +63,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/f3060f79-50ab-459c-9f00-5cf6e5f8abf8/resourceGroups/gr-sisinfo-4536427/providers/Microsoft.Storage/storageAccounts/sasisinfo4536427"
 		},
+		"trigger3_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f3060f79-50ab-459c-9f00-5cf6e5f8abf8/resourceGroups/gr-sisinfo-4536427/providers/Microsoft.Storage/storageAccounts/sasisinfo4536427"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
@@ -128,6 +132,9 @@
 					},
 					"ls_sql_dw_ventas_properties_typeProperties_userName": {
 						"value": "[parameters('ls_sql_dw_ventas_properties_typeProperties_userName')]"
+					},
+					"trigger3_properties_typeProperties_scope": {
+						"value": "[parameters('trigger3_properties_typeProperties_scope')]"
 					}
 				}
 			},
